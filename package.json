@@ -1,6 +1,6 @@
 {
-  "name": "stylelint-config-standard",
-  "version": "16.0.0",
+  "name": "stylelint-config-bare",
+  "version": "0.1.0",
   "description": "Standard shareable config for stylelint",
   "keywords": [
     "stylelint",
@@ -11,7 +11,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/stylelint/stylelint-config-standard.git"
+    "url": "git+https://github.com/stylelint/stylelint-config-standard.git"
   },
   "main": "index.js",
   "files": [
@@ -32,18 +32,13 @@
     "stylelint": "^7.8.0"
   },
   "scripts": {
-    "lint:js": "eslint . --ignore-path .gitignore",
+    "lint:js": "eslint index.js  --config node_modules/eslint-config-stylelint/index.js",
     "lint:md": "remark . --quiet --frail",
     "lint": "npm-run-all --parallel lint:*",
     "pretest": "npm run lint",
     "release": "npmpub",
     "test": "jest",
     "watch": "jest --watch"
-  },
-  "eslintConfig": {
-    "extends": [
-      "stylelint"
-    ]
   },
   "jest": {
     "testEnvironment": "node",
@@ -54,5 +49,9 @@
       "preset-lint-recommended",
       "preset-lint-consistent"
     ]
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/stylelint/stylelint-config-standard/issues"
+  },
+  "homepage": "https://github.com/stylelint/stylelint-config-standard#readme"
 }
